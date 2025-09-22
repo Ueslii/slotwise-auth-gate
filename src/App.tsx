@@ -47,8 +47,11 @@ const AppRoutes = () => {
     return (
       <Routes>
         <Route path="/super-admin" element={<SuperAdmin />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/meus-agendamentos" element={<MeusAgendamentos />} />
+        <Route path="/pending-approval" element={<PendingApproval />} />
         <Route path="/" element={<Navigate to="/super-admin" replace />} />
-        <Route path="*" element={<Navigate to="/super-admin" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     );
   }
