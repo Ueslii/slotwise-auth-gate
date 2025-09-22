@@ -358,16 +358,19 @@ export type Database = {
           full_name: string | null
           id: string
           role: string
+          status: string | null
         }
         Insert: {
           full_name?: string | null
           id: string
           role: string
+          status?: string | null
         }
         Update: {
           full_name?: string | null
           id?: string
           role?: string
+          status?: string | null
         }
         Relationships: []
       }

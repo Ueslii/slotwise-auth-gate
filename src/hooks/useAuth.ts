@@ -7,7 +7,7 @@ export interface UserProfile {
   id: string;
   full_name: string | null;
   role: string;
-  status?: string;
+  status: string;
 }
 
 export const useAuth = () => {

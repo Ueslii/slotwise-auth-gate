@@ -12,7 +12,7 @@ interface PendingUser {
   id: string;
   full_name: string | null;
   role: string;
-  status?: string;
+  status: string;
 }
 
 const SuperAdmin = () => {
@@ -26,7 +26,7 @@ const SuperAdmin = () => {
     try {
       const { data, error } = await supabase
         .from('profiles')
-        .select('*')
+        .select('id, full_name, role, status')
         .eq('role', 'administrador')
         .eq('status', 'pendente');
 
@@ -59,7 +59,9 @@ const SuperAdmin = () => {
     try {
       const { error } = await supabase
         .from('profiles')
-        .update({ status: 'ativo' })
+        .update({ 
+          status: 'ativo' 
+        })
         .eq('id', userId);
 
       if (error) {
