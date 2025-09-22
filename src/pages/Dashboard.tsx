@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
-import { LayoutDashboard, User, LogOut, Building, Settings, Calendar, Loader2 } from 'lucide-react';
+import { LayoutDashboard, User, LogOut, Building, Settings, Calendar } from 'lucide-react';
 
 const Dashboard = () => {
   const { signOut, profile, user } = useAuth();
