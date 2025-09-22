@@ -10,6 +10,9 @@ import PendingApproval from "./pages/PendingApproval";
 import Dashboard from "./pages/Dashboard";
 import MeusAgendamentos from "./pages/MeusAgendamentos";
 import SuperAdmin from "./pages/SuperAdmin";
+import SetupEstablishment from "./pages/SetupEstablishment";
+import GerenciarServicos from "./pages/GerenciarServicos";
+import Disponibilidade from "./pages/Disponibilidade";
 import NotFound from "./pages/NotFound";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { useAuth } from "@/hooks/useAuth";
@@ -48,6 +51,9 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/super-admin" element={<SuperAdmin />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/setup-establishment" element={<SetupEstablishment />} />
+        <Route path="/gerenciar-servicos" element={<GerenciarServicos />} />
+        <Route path="/disponibilidade" element={<Disponibilidade />} />
         <Route path="/meus-agendamentos" element={<MeusAgendamentos />} />
         <Route path="/pending-approval" element={<PendingApproval />} />
         <Route path="/" element={<Navigate to="/super-admin" replace />} />
@@ -69,6 +75,9 @@ const AppRoutes = () => {
     return (
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/setup-establishment" element={<SetupEstablishment />} />
+        <Route path="/gerenciar-servicos" element={<GerenciarServicos />} />
+        <Route path="/disponibilidade" element={<Disponibilidade />} />
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
