@@ -1,41 +1,12 @@
-import { useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { Calendar, Users, LogIn, UserPlus } from 'lucide-react';
 
 const Index = () => {
-  const { user, profile, loading } = useAuth();
-  const navigate = useNavigate();
+  const { user } = useAuth();
 
-  useEffect(() => {
-    if (!loading && user && profile) {
-      // Redirect based on role and status
-      if (profile.role === 'super_admin') {
-        navigate('/super-admin');
-      } else if (profile.role === 'administrador') {
-        if (profile.status === 'pendente') {
-          navigate('/pending-approval');
-        } else if (profile.status === 'ativo') {
-          navigate('/dashboard');
-        }
-      } else if (profile.role === 'cliente') {
-        navigate('/meus-agendamentos');
-      }
-    }
-  }, [user, profile, loading, navigate]);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Carregando...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-background">
