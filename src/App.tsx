@@ -13,6 +13,9 @@ import SuperAdmin from "./pages/SuperAdmin";
 import SetupEstablishment from "./pages/SetupEstablishment";
 import GerenciarServicos from "./pages/GerenciarServicos";
 import Disponibilidade from "./pages/Disponibilidade";
+import EstablishmentPublic from "./pages/EstablishmentPublic";
+import BookingPage from "./pages/BookingPage";
+import BookingSuccess from "./pages/BookingSuccess";
 import NotFound from "./pages/NotFound";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { useAuth } from "@/hooks/useAuth";
@@ -40,6 +43,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/estabelecimentos/:id" element={<EstablishmentPublic />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     );
@@ -56,6 +60,9 @@ const AppRoutes = () => {
         <Route path="/disponibilidade" element={<Disponibilidade />} />
         <Route path="/meus-agendamentos" element={<MeusAgendamentos />} />
         <Route path="/pending-approval" element={<PendingApproval />} />
+        <Route path="/estabelecimentos/:id" element={<EstablishmentPublic />} />
+        <Route path="/agendar/:serviceId" element={<BookingPage />} />
+        <Route path="/agendamento-concluido" element={<BookingSuccess />} />
         <Route path="/" element={<Navigate to="/super-admin" replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
@@ -78,6 +85,9 @@ const AppRoutes = () => {
         <Route path="/setup-establishment" element={<SetupEstablishment />} />
         <Route path="/gerenciar-servicos" element={<GerenciarServicos />} />
         <Route path="/disponibilidade" element={<Disponibilidade />} />
+        <Route path="/estabelecimentos/:id" element={<EstablishmentPublic />} />
+        <Route path="/agendar/:serviceId" element={<BookingPage />} />
+        <Route path="/agendamento-concluido" element={<BookingSuccess />} />
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
@@ -89,6 +99,9 @@ const AppRoutes = () => {
     return (
       <Routes>
         <Route path="/meus-agendamentos" element={<MeusAgendamentos />} />
+        <Route path="/estabelecimentos/:id" element={<EstablishmentPublic />} />
+        <Route path="/agendar/:serviceId" element={<BookingPage />} />
+        <Route path="/agendamento-concluido" element={<BookingSuccess />} />
         <Route path="/" element={<Navigate to="/meus-agendamentos" replace />} />
         <Route path="*" element={<Navigate to="/meus-agendamentos" replace />} />
       </Routes>
